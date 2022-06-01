@@ -1,0 +1,94 @@
+--open sourced because i don't care
+
+local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
+local win = DiscordLib:Window("hiix")
+local serv = win:Server("ok", "")
+local btns = serv:Channel("god itself")
+local ae = serv:Channel("Anti-Exploit")
+
+
+btns:Button("Method 1 GodMode 1-time",function()
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("TouchTransmitter") then
+            v:Destroy()
+    end
+    end
+    DiscordLib:Notification("godmode method 1 enabled", "anti touchinterest enabled", "dont care")
+end)
+
+btns:Button("Method 1 GodMode Loop",function()
+    while true do
+    wait(0.1)
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("TouchTransmitter") then
+            v:Destroy()
+    end
+    end
+    end
+DiscordLib:Notification("godmode method 1 loop enabled", "anti touchinterest loop enabled", "dont care")
+end)
+
+btns:Button("GodMode method 2",function()
+    game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(property)
+        if property == "Health" then
+            game.Players.LocalPlayer.Character.Humanoid.Health = 100
+        end
+    end)
+    DiscordLib:Notification("godmode method 2 enabled", "Loop Health enabled", "dont care")
+end)
+
+btns:Button("GodMode method 2.1 [RISKY!]",function()
+    game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(property)
+        if property == "Health" then
+            game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99999
+            game.Players.LocalPlayer.Character.Humanoid.Health = 99999
+        end
+    end)
+DiscordLib:Notification("godmode method 2.1 enabled", "You may get banned", "dont care")
+end)
+
+btns:Button("GodMode method 3",function()
+for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+if v:IsA("Motor6D") and v.Parent.Name ~= "Head" and v.Parent.Name ~= "HumanoidRootPart" and v.Parent.Name ~= "Torso" or v:IsA("Attachment") and v.Parent.Name ~= "Head" and v.Parent.Name ~= "HumanoidRootPart" and v.Parent.Name ~= "Torso" then
+    v:Destroy()
+end
+end
+DiscordLib:Notification("godmode method 3 enabled", "removed all Motor6D and attachments parts [working almost nowhere]", "dont care")
+end)
+
+btns:Button("GodMode method 4", function()
+    for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
+        if v:IsA("BasePart") and v.Name ~= "Head" and v.Name ~= "Torso" and v.Name ~= "HumanoidRootPart" then
+            v.Name = " " .. tostring(math.random(1,100000))
+        end
+    game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid").Name = "notmanoidhiix"
+    end
+DiscordLib:Notification("godmode method 4 enabled", "mostly will break character", "dont care")
+end)
+
+ae:Button("Anti-Kick (localscripts)", function()
+	local mt = getrawmetatable(game)
+	local old = mt.__namecall
+	local protect = newcclosure or protect_function
+	protect = function(f) return f end
+
+	setreadonly(mt, false)
+	mt.__namecall = protect(function(self, ...)
+		local method = getnamecallmethod()
+		if method == "Kick" then
+			return nil
+		end
+		return old(self, ...)
+	end)
+	hookfunction(Players.LocalPlayer.Kick,protect(function() return nil end))
+DiscordLib:Notification("Done", "you will not get kicked by localscripts", "dont care")
+end)
+
+ae:Button("[very bad] find and remove anticheats", function()
+for i,v in pairs(game:GetDescendants()) do
+if v.Name == "AC" or v.Name == "..." or v.Name == "AntiExploit" or v.Name == ".]./]]." or v.Name == "DIR_AntiExploit" or v.Name == "ac" or v.Name == "nil" then
+    v:Destroy()
+end
+end
+DiscordLib:Notification("tried", "but prob removed 0", "dont care")
+end)
