@@ -96,7 +96,7 @@ end)
 btns:Button("GodMode method 5",function()
 ads = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
 asd = ads:Clone()
-asd.Name = "FFMPEGFG"
+asd.Name = "Humanoid"
 asd.Parent = game.CoreGui
 ads.Parent = game.CoreGui
 asd.Parent = game.Players.LocalPlayer.Character
