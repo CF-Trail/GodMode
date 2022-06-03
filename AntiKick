@@ -92,3 +92,13 @@ end
 end
 DiscordLib:Notification("tried", "but prob removed 0", "dont care")
 end)
+
+btns:Button("GodMode method 5",function()
+ads = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
+asd = ads:Clone()
+asd.Name = "FFMPEGFG"
+asd.Parent = game.CoreGui
+ads.Parent = game.CoreGui
+asd.Parent = game.Players.LocalPlayer.Character
+DiscordLib:Notification("swapped!", "Swapped Humanoid", "dont care")
+end)
