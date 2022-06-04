@@ -7,7 +7,7 @@ local btns = serv:Channel("god itself")
 local ae = serv:Channel("Anti-Exploit")
 
 
-btns:Button("Method 1 GodMode 1-time",function()
+btns:Button("Anti-TouchInterest 1-time",function()
     for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
         if v:IsA("TouchTransmitter") then
             v:Destroy()
@@ -16,7 +16,7 @@ btns:Button("Method 1 GodMode 1-time",function()
     DiscordLib:Notification("godmode method 1 enabled", "anti touchinterest enabled", "dont care")
 end)
 
-btns:Button("Method 1 GodMode Loop",function()
+btns:Button("Anti-TouchInterest Loop",function()
     while true do
     wait(0.1)
     for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
@@ -28,7 +28,7 @@ btns:Button("Method 1 GodMode Loop",function()
 DiscordLib:Notification("godmode method 1 loop enabled", "anti touchinterest loop enabled", "dont care")
 end)
 
-btns:Button("GodMode method 2",function()
+btns:Button("Loop Health [100]",function()
     game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(property)
         if property == "Health" then
             game.Players.LocalPlayer.Character.Humanoid.Health = 100
@@ -37,7 +37,7 @@ btns:Button("GodMode method 2",function()
     DiscordLib:Notification("godmode method 2 enabled", "Loop Health enabled", "dont care")
 end)
 
-btns:Button("GodMode method 2.1 [RISKY!]",function()
+btns:Button("Loop Health [99999] [RISKY!]",function()
     game.Players.LocalPlayer.Character.Humanoid.Changed:Connect(function(property)
         if property == "Health" then
             game.Players.LocalPlayer.Character.Humanoid.MaxHealth = 99999
@@ -47,7 +47,7 @@ btns:Button("GodMode method 2.1 [RISKY!]",function()
 DiscordLib:Notification("godmode method 2.1 enabled", "You may get banned", "dont care")
 end)
 
-btns:Button("GodMode method 3",function()
+btns:Button("Remove Attachments and Motor6D parts",function()
 for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
 if v:IsA("Motor6D") and v.Parent.Name ~= "Head" and v.Parent.Name ~= "HumanoidRootPart" and v.Parent.Name ~= "Torso" or v:IsA("Attachment") and v.Parent.Name ~= "Head" and v.Parent.Name ~= "HumanoidRootPart" and v.Parent.Name ~= "Torso" then
     v:Destroy()
@@ -56,7 +56,7 @@ end
 DiscordLib:Notification("godmode method 3 enabled", "removed all Motor6D and attachments parts [working almost nowhere]", "dont care")
 end)
 
-btns:Button("GodMode method 4", function()
+btns:Button("Rename Character parts", function()
     for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
         if v:IsA("BasePart") and v.Name ~= "Head" and v.Name ~= "Torso" and v.Name ~= "HumanoidRootPart" then
             v.Name = " " .. tostring(math.random(1,100000))
@@ -93,7 +93,7 @@ end
 DiscordLib:Notification("tried", "but prob removed 0", "dont care")
 end)
 
-btns:Button("GodMode method 5",function()
+btns:Button("Spoof Humanoid",function()
 ads = game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Humanoid")
 asd = ads:Clone()
 asd.Name = "Humanoid"
