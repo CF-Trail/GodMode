@@ -7,6 +7,8 @@ local btns = serv:Channel("god itself")
 local ae = serv:Channel("Anti-Exploit")
 
 
+btns:Label("Got more bypasses? .gg#1780")
+
 btns:Button("Anti-TouchInterest 1-time",function()
     for i,v in pairs(game.Players.LocalPlayer.Character:GetDescendants()) do
         if v:IsA("TouchTransmitter") then
@@ -109,4 +111,3 @@ az = Instance.new("ForceField",game.Players.LocalPlayer.Character)
 az.Visible = false
 end
 end)
-btns:Label("Got more bypasses? .gg#1780")
