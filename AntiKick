@@ -75,7 +75,7 @@ ae:Button("Anti-Kick (localscripts)", function()
 	protect = function(f) return f end
 
 	setreadonly(mt, false)
-	mt.__namecall = protect(function(self, ...)
+	mt.__namecall = newcclosure(function(self, ...)
 		local method = getnamecallmethod()
 		if method == "Kick" then
 			return nil
