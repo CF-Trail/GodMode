@@ -69,19 +69,21 @@ DiscordLib:Notification("godmode method 4 enabled", "mostly will break character
 end)
 
 ae:Button("Anti-Kick (localscripts)", function()
-	local gmt = getrawmetatable(game)
+	local mt = getrawmetatable(game)
 	local old = mt.__namecall
 	local protect = newcclosure or protect_function
-	protect = function(f) return f end
 
-	setreadonly(gmt, false)
-	mt.__namecall = newcclosure(function(self, ...)
+	setreadonly(mt, false)
+	mt.__namecall = protect(function(self, ...)
 		local method = getnamecallmethod()
 		if method == "Kick" then
-			return nil
+			wait(9e9)
+			return
 		end
 		return old(self, ...)
 	end)
+	hookfunction(Players.LocalPlayer.Kick,protect(function() wait(9e9) end))
+
 DiscordLib:Notification("Done", "you will not get kicked by localscripts", "dont care")
 end)
 
